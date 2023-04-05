@@ -16,11 +16,11 @@ jobs:
           cache: yarn
       - name: Install dependencies
         run: yarn install
-        working-directory: ./docsrcs/yui-ibc-solidity
+        working-directory: docsrcs/yui-ibc-solidity
 
       - name: Build website
         run: yarn build
-        working-directory: ./docsrcs/yui-ibc-solidity
+        working-directory: docsrcs/yui-ibc-solidity
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
