@@ -8,18 +8,18 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    working-directory: ./docsrcs/yui-ibc-solidity
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: 18.x
-          cache: yarn
       - name: Install dependencies
         run: yarn install
+        working-directory: ./docsrcs/yui-ibc-solidity
 
       - name: Build website
         run: yarn build
+        working-directory: ./docsrcs/yui-ibc-solidity
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
